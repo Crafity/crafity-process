@@ -4,9 +4,23 @@ var core = require('crafity-core')
 	, Event = core.Event
 	, homedir = process.env.HOME;
 
+/**
+ * Framework name.
+ */
+exports.fullname = 'crafity-process';
+
+/**
+ * Framework version.
+ */
+exports.version = '0.0.1';
+
+/**
+ * Initialize module
+ */
+
 exports.init = function (config) {
 	var registeredProcesses = {}
-		, Process = require('./Process');
+		, Process = require('./lib/Process');
 
 	function exit() {
 		console.log('\u001b[31mStopping Child Processes\u001b[39m');
