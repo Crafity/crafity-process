@@ -1,63 +1,63 @@
 {
-	"name": "crafity-process",
-	"description": "Generic process manager",
-	"version": "0.0.1",
-	"author": "Galina Slavova <galina@crafity.com>",
-	"homepage": "https://github.com/Crafity/crafity-process",
-	"keywords": ["crafity", "process", "config", "settings", "manager", "configuration"],
-	"maintainers": [
-		{
-			"name": "Bart Riemens",
-			"email": "briemens@crafity.com",
-			"web": "http://crafity.com/about/bart"
-		},
-		{
-			"name": "Galina Slavova",
-			"email": "galina@crafity.com",
-			"web": "http://crafity.com/about/galina"
-		}
-	],
-	"contributors": [
-		{
-			"name": "Galina Slavova",
-			"email": "galina@crafity.com",
-			"web": "http://crafity.com/about/galina"
-		},
-		{
-			"name": "Bart Riemens",
-			"email": "briemens@crafity.com",
-			"web": "http://crafity.com/about/bart"
-		}
-	],
-	"main": "./main.js",
-	"directories": {
-		"lib": "lib",
-		"test": "test"
-	},
-	"licenses": [
-		{
-			"type": "The MIT License",
-			"url": "https://github.com/Crafity/crafity-process/blob/master/LICENSE"
-		}
-	],
-	"bugs": "https://github.com/Crafity/crafity-process/issues",
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/Crafity/crafity-process.git"
-		}
-	],
-	"dependencies": {
-		"crafity-core": "*",
-		"crafity-filesystem": "*",
-		"crafity-jstest": "*"
-	},
-	"engines": {
-		"node": "*"
-	},
-	"scripts": {
-		"prepublish": "npm prune",
-		"test": "./runtests"
-	}
+  "name": "crafity-process",
+  "description": "Generic process manager",
+  "version": "0.0.1",
+  "author": "Galina Slavova <galina@crafity.com>",
+  "homepage": "https://github.com/Crafity/crafity-process",
+  "keywords": ["crafity", "process", "config", "settings", "manager", "configuration"],
+  "maintainers": [
+    {
+      "name": "Bart Riemens",
+      "email": "briemens@crafity.com",
+      "web": "http://crafity.com/about/bart"
+    },
+    {
+      "name": "Galina Slavova",
+      "email": "galina@crafity.com",
+      "web": "http://crafity.com/about/galina"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Galina Slavova",
+      "email": "galina@crafity.com",
+      "web": "http://crafity.com/about/galina"
+    },
+    {
+      "name": "Bart Riemens",
+      "email": "briemens@crafity.com",
+      "web": "http://crafity.com/about/bart"
+    }
+  ],
+  "main": "./main.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "licenses": [
+    {
+      "type": "The MIT License",
+      "url": "https://github.com/Crafity/crafity-process/blob/master/LICENSE"
+    }
+  ],
+  "bugs": "https://github.com/Crafity/crafity-process/issues",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Crafity/crafity-process.git"
+    }
+  ],
+  "dependencies": {
+    "crafity-core": "*",
+    "crafity-filesystem": "*",
+    "crafity-jstest": "*"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "./runtests"
+  }
 }
 
