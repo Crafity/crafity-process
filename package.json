@@ -46,9 +46,9 @@
       "url": "https://github.com/Crafity/crafity-process.git"
     },
   "dependencies": {
-    "crafity-core": "*",
-    "crafity-filesystem": "*",
-    "crafity-jstest": "*"
+    "crafity-core": "~0.1.0",
+    "crafity-filesystem": "~0.1.0",
+    "crafity-jstest": "~0.1.0"
   },
   "engines": {
     "node": "*"
