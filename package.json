@@ -1,8 +1,8 @@
 {
   "name": "crafity-process",
   "description": "Generic process manager",
-  "author": "Galina Slavova <galina@crafity.com>",
   "version": "0.1.0",
+  "author": "Galina Slavova <galina@crafity.com> and Bart Riemens <briemens@crafity.com>",
   "homepage": "https://github.com/Crafity/crafity-process",
   "keywords": ["crafity", "process", "config", "settings", "manager", "configuration"],
   "maintainers": [
