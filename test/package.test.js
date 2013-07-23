@@ -1,14 +1,18 @@
+/*jslint node: true, white: true */
+"use strict";
+
 /*!
- * package.test - package.json tests
- * Copyright(c) 2011 Crafity
- * Copyright(c) 2012 Galina Slavova
- * Copyright(c) 2012 Bart Riemens
+ * crafity-config - Generic configuration provider
+ * Copyright(c) 2010-2013 Crafity
+ * Copyright(c) 2010-2013 Bart Riemens
+ * Copyright(c) 2010-2013 Galina Slavova
  * MIT Licensed
  */
 
 /**
  * Test dependencies.
  */
+
 var jstest = require('crafity-jstest')
 	, assert = jstest.assert
 	, context = jstest.createContext()
@@ -26,6 +30,7 @@ var tests = {
 	'The module must have package.json file': function () {
 
 		fs.readFile("./package.json", function (err, data) {
+      assert.hasNoValue(err, "Didn't expect an error");
 			assert.isDefined(data, "Expected package.json defined");
 		});
 	}
