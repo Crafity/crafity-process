@@ -13,21 +13,13 @@
  * Test dependencies.
  */
 
-var jstest = require('crafity-jstest')
+var jstest = require('crafity-jstest').createContext("Crafity process tests")
 	, assert = jstest.assert
-	, context = jstest.createContext("Crafity process tests")
 	, fs = require('crafity-filesystem')
 	, main = require('../main.js')
 	;
 
 /**
- * The tests
- */
-var tests = {
-
-};
-
-/**
  * Run the tests
  */
-context.run(tests);
+jstest.run({});
