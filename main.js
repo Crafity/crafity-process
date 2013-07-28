@@ -86,13 +86,12 @@ exports.init = function (config) {
       }
 
       if (info.git) {
-        fs.readdir(fs.combine(info.cwd, info.git.path, ".git"), function (err) {
+        return fs.readdir(fs.combine(info.cwd, info.git.path, ".git"), function (err) {
           process.info.git.available = !err;
           return callback(null, process);
         });
-      } else {
-        return callback(null, process);
       }
+      return callback(null, process);
     } catch (err) {
       return callback(err);
     }
@@ -126,7 +125,7 @@ exports.init = function (config) {
             }
           } else {
             // Register the process
-            createProcess(processInfo, synchronizer.register(processInfo.name, function (err, process) {
+            return createProcess(processInfo, synchronizer.register(processInfo.name, function (err, process) {
               if (err) { return console.error(err.stack || err.toString()); }
               registeredProcesses[processInfo.name] = process;
 
@@ -144,8 +143,8 @@ exports.init = function (config) {
         }
       });
 
-      synchronizer.onfinish(function (err) {
-        callback(err);
+      return synchronizer.onfinish(function (err) {
+        return callback(err);
       });
 
     } catch (err) {
