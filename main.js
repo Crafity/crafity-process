@@ -49,6 +49,9 @@ exports.init = function (config) {
       if (info.cwd && info.cwd.indexOf("~") === 0) {
         info.cwd = info.cwd.replace('~', homedir);
       }
+      if (info.cmd && info.cmd.indexOf("~") === 0) {
+        info.cmd = info.cmd.replace('~', homedir);
+      }
       var process = new Process(info)
         , fatal = true
         , fatalTimerId
