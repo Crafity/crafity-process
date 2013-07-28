@@ -46,7 +46,7 @@ exports.init = function (config) {
 
   function createProcess(info, callback) {
     try {
-      if (info.cwd.indexOf("~") > -1) {
+      if (info.cwd && info.cwd.indexOf("~") === 0) {
         info.cwd = info.cwd.replace('~', homedir);
       }
       var process = new Process(info)
