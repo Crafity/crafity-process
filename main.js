@@ -141,6 +141,7 @@ exports.init = function (config) {
             }));
           }
         } catch (err) {
+          console.error(err.stack || err.toString());
         }
       });
 
