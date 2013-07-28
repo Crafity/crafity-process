@@ -127,7 +127,7 @@ exports.init = function (config) {
           } else {
             // Register the process
             createProcess(processInfo, synchronizer.register(processInfo.name, function (err, process) {
-              if (err) { return console.error("err", err.stack, err); }
+              if (err) { return console.error(err.stack || err.toString()); }
               registeredProcesses[processInfo.name] = process;
 
               exports.onNewProcess.raise(process);
@@ -141,7 +141,6 @@ exports.init = function (config) {
             }));
           }
         } catch (err) {
-          console.log("err", err.stack, err);
         }
       });
 
