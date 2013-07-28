@@ -124,22 +124,23 @@ exports.init = function (config) {
               return callback(new Error("Process '" + processInfo.name + "' is already registered."));
             }
             return callback(new Error("Process '" + processInfo.name + "' is already registered."));
-          } else {
-            // Register the process
-            return createProcess(processInfo, synchronizer.register(processInfo.name, function (err, process) {
-              if (err) { return console.error(err.stack || err.toString()); }
-              registeredProcesses[processInfo.name] = process;
-
-              exports.onNewProcess.raise(process);
-
-              // And start the process automatically
-              if (processInfo.autostart) {
-                setTimeout(function () {
-                  process.commands.start();
-                }, 0);
-              }
-            }));
           }
+
+          // Register the process
+          return createProcess(processInfo, synchronizer.register(processInfo.name, function (err, process) {
+            if (err) { return console.error(err.stack || err.toString()); }
+            registeredProcesses[processInfo.name] = process;
+
+            exports.onNewProcess.raise(process);
+
+            // And start the process automatically
+            if (processInfo.autostart) {
+              setTimeout(function () {
+                process.commands.start();
+              }, 0);
+            }
+          }));
+
         } catch (err) {
           console.error(err.stack || err.toString());
         }
