@@ -121,8 +121,9 @@ exports.init = function (config) {
               JSON.stringify(registeredProcess.info.args) !== JSON.stringify(processInfo.args) ||
               registeredProcess.info.autostart !== processInfo.autostart ||
               registeredProcess.info.cmd !== processInfo.cmd) {
-              throw new Error("Process '" + processInfo.name + "' is already registered.");
+              return callback(new Error("Process '" + processInfo.name + "' is already registered."));
             }
+            return callback(new Error("Process '" + processInfo.name + "' is already registered."));
           } else {
             // Register the process
             return createProcess(processInfo, synchronizer.register(processInfo.name, function (err, process) {
