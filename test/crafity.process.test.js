@@ -23,3 +23,5 @@ var jstest = require('crafity-jstest').createContext("Crafity process tests")
  * Run the tests
  */
 jstest.run({});
+
+module.exports = jstest;
