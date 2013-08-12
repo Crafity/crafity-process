@@ -121,9 +121,9 @@ exports.init = function (config) {
               JSON.stringify(registeredProcess.info.args) !== JSON.stringify(processInfo.args) ||
               registeredProcess.info.autostart !== processInfo.autostart ||
               registeredProcess.info.cmd !== processInfo.cmd) {
-              return callback(new Error("Process '" + processInfo.name + "' is already registered."));
+              return synchronizer.register()(new Error("Process '" + processInfo.name + "' is already registered."));
             }
-            return callback(new Error("Process '" + processInfo.name + "' is already registered."));
+            return synchronizer.register()(new Error("Process '" + processInfo.name + "' is already registered."));
           }
 
           // Register the process
@@ -143,6 +143,7 @@ exports.init = function (config) {
 
         } catch (err) {
           console.error(err.stack || err.toString());
+					return synchronizer.register()(err);
         }
       });
 
